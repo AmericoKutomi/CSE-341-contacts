@@ -9,6 +9,7 @@ const initDb = (callback) => {
     console.log('Db is already initialized!');
     return callback(null, _db);
   }
+  console.log('Vai logar no MongoDB');
   MongoClient.connect(process.env.MONGODB_URI)
     .then((client) => {
       _db = client;
@@ -17,6 +18,7 @@ const initDb = (callback) => {
     .catch((err) => {
       callback(err);
     });
+  console.log('Logou no MongoDB');
 };
 
 const getDb = () => {
