@@ -1,0 +1,5 @@
+GET http://localhost:8080/contacts
+# local: the request above returns a json object with all contacts data.
+
+GET https://cse-341-contacts-i6dr.onrender.com/contacts
+# Render: the request above returns a json object with all contacts data.
