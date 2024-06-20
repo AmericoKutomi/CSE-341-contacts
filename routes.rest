@@ -1,14 +1,14 @@
-// localhost
-@hostname = http://localhost:8080
+###  localhost requests
+@localhostName = http://localhost:8080
 
 ### returns a json object with all contacts data.
-GET {{hostname}}/contacts
+GET {{localhostName}}/contacts
 
 ### returns a json object with a specific contact.
-GET {{hostname}}/contacts/650c5812c06bc031e32200a1
+GET {{localhostName}}/contacts/650c5812c06bc031e32200a1
 
 ### creates a new contact.
-POST {{hostname}}/contacts HTTP/1.1
+POST {{localhostName}}/contacts HTTP/1.1
 content-type: application/json
 
 {
@@ -20,7 +20,7 @@ content-type: application/json
 }
 
 ### updates an existing contact.
-PUT {{hostname}}/contacts/650c5812c06bc031e32200a1 HTTP/1.1
+PUT {{localhostName}}/contacts/650c5812c06bc031e32200a1 HTTP/1.1
 content-type: application/json
 
 {
@@ -32,13 +32,47 @@ content-type: application/json
 }
 
 ### removes an existing contact
-DELETE {{hostname}}/contacts/66742e379ca21b5d1b9668d9 HTTP/1.1
+DELETE {{localhostName}}/contacts/66742e379ca21b5d1b9668d9 HTTP/1.1
 
-###
+### opens the API documentation 
+GET {{localhostName}}/api-docs
 
-// Render
-GET https://cse-341-contacts-i6dr.onrender.com/contacts
-# the request above returns a json object with all contacts data.
+###  Render requests
 
-GET https://cse-341-contacts-i6dr.onrender.com/contacts/650c5812c06bc031e32200a1
-# the request above returns a json object with a specific contact.
+@publishedHostName = https://cse-341-contacts-i6dr.onrender.com
+
+### returns a json object with all contacts data.
+GET {{publishedHostName}}/contacts
+
+### returns a json object with a specific contact.
+GET {{publishedHostName}}/contacts/650c5812c06bc031e32200a1
+
+### creates a new contact.
+POST {{publishedHostName}}/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Americo",
+    "lastName":"Kutomi",
+    "email":"americo@test.com",
+    "favoriteColor":"yellow",
+    "birthday":"05/31/1999"
+}
+
+### updates an existing contact.
+PUT {{publishedHostName}}/contacts/650c5812c06bc031e32200a1 HTTP/1.1
+content-type: application/json
+
+{
+  "firstName":"Bill",
+  "lastName":"Gates",
+  "email":"billgates@test.com",
+  "favoriteColor":"Blue",
+  "birthday":"12/22/1950"
+}
+
+### removes an existing contact
+DELETE {{publishedHostName}}/contacts/66742e379ca21b5d1b9668d9 HTTP/1.1
+
+### opens the API documentation 
+GET {{publishedHostName}}/api-docs
